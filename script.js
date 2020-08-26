@@ -34,7 +34,7 @@ function generatePassword() {
   let pwdLength = prompt("How many characters would you like your password to contain?");
   // let characterType = prompt(" what type of characters you want to include");
   // let confirmSpecial = confirm("Click OK to include specialCharacters");
-  if (pwdLength < "8" && pwdLength > "123") {
+  if (pwdLength < 8 && pwdLength > 123) {
     pwdLength = prompt("Choose the password length between 8 to 123");
   }
 
