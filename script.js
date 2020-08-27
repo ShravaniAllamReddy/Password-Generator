@@ -1,6 +1,6 @@
 // Constants
 const generateBtn = document.querySelector("#generate");
-const pwd = {
+const chars = {
 
   lowerCase: 'abcdefghijklmnopqrstuvwxyz',
 
@@ -8,7 +8,7 @@ const pwd = {
 
   numeric: '0123456789',
 
-  specialCharacters: '!"#$%&\'()*+,-./:;<=>?@[]^_{|}~'
+  specialCharacters: ' !"#$%&\'()*+,-./:;<=>?@[]^_{|}~'
 
 };
 
@@ -37,27 +37,43 @@ function generatePassword() {
     pwdLength = prompt("Choose the password length between 8 to 128");
   }
 
-  if (confirm("would you like to include uppercase")) {
-    userChoices += pwd.upperCase;
+  let confirmUppers = confirm("would you like to include uppercase");
+  let confirmLowers = confirm("would you like to include lowercase");
+  let confirmNumbers = confirm("would you like to include numbers");
+  let confirmSpecials = confirm("would you like to include special characters");
+
+
+  if (confirmUppers === false && confirmLowers === false && confirmNumbers === false && confirmSpecials === false) {
+    alert("Select atleast one character type");
+    confirmUppers = confirm("would you like to include uppercase");
+    confirmLowers = confirm("would you like to include lowercase");
+    confirmNumbers = confirm("would you like to include numbers");
+    confirmSpecials = confirm("would you like to include special characters");
   }
 
-  if (confirm("would you like to include lowercase")) {
-    userChoices += pwd.lowerCase;
+  if (confirmUppers) {
+    userChoices += chars.upperCase;
   }
 
-  if (confirm("would you like to include numbers")) {
-    userChoices += pwd.numeric;
+  if (confirmLowers) {
+    userChoices += chars.lowerCase;
   }
 
-  if (confirm("would you like to include special characters")) {
-    userChoices += pwd.specialCharacters;
+  if (confirmNumbers) {
+    userChoices += chars.numeric;
   }
 
-  // console.log(userChoices);
+  if (confirmSpecials) {
+    userChoices += chars.specialCharacters;
+  }
+
+
+  console.log(userChoices);
 
   for (let i = 0; i < pwdLength; i++) {
 
     password += userChoices[Math.floor(Math.random() * userChoices.length)];
+
   }
   return password;
 
