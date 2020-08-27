@@ -33,7 +33,7 @@ function generatePassword() {
   let userChoices = "";
   let pwdLength = prompt("How many characters would you like your password to contain?");
 
-  if (pwdLength < 8 || pwdLength > 128) {
+  while (pwdLength < 8 || pwdLength > 128) {
     pwdLength = prompt("Choose the password length between 8 to 128");
   }
 
@@ -43,7 +43,7 @@ function generatePassword() {
   let confirmSpecials = confirm("would you like to include special characters");
 
 
-  if (confirmUppers === false && confirmLowers === false && confirmNumbers === false && confirmSpecials === false) {
+  while (confirmUppers === false && confirmLowers === false && confirmNumbers === false && confirmSpecials === false) {
     alert("Select atleast one character type");
     confirmUppers = confirm("would you like to include uppercase");
     confirmLowers = confirm("would you like to include lowercase");
