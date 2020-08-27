@@ -30,25 +30,38 @@ function generatePassword() {
 
   // Password is currently blank! We need to make a better one
   let password = "";
-
+  let userChoices = "";
   let pwdLength = prompt("How many characters would you like your password to contain?");
-  // let characterType = prompt(" what type of characters you want to include");
-  // let confirmSpecial = confirm("Click OK to include specialCharacters");
 
-  if (pwdLength < 8 || pwdLength > 123) {
-    pwdLength = prompt("Choose the password length between 8 to 123");
+  if (pwdLength < 8 || pwdLength > 128) {
+    pwdLength = prompt("Choose the password length between 8 to 128");
   }
 
-  let userChoices = pwd.lowerCase + pwd.upperCase + pwd.numeric + pwd.specialCharacters;
+  if (confirm("would you like to include uppercase")) {
+    userChoices += pwd.upperCase;
+  }
+
+  if (confirm("would you like to include lowercase")) {
+    userChoices += pwd.lowerCase;
+  }
+
+  if (confirm("would you like to include numbers")) {
+    userChoices += pwd.numeric;
+  }
+
+  if (confirm("would you like to include special characters")) {
+    userChoices += pwd.specialCharacters;
+  }
+
+  // console.log(userChoices);
 
   for (let i = 0; i < pwdLength; i++) {
 
     password += userChoices[Math.floor(Math.random() * userChoices.length)];
-
-  };
+  }
   return password;
-}
 
+}
 
 // Main Process
 
