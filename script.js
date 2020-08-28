@@ -33,6 +33,7 @@ function generatePassword() {
   let userChoices = "";
   let pwdLength = prompt("How many characters would you like your password to contain?");
 
+  // while loops execute a block of code as long as a specified condition is true
   while (pwdLength < 8 || pwdLength > 128) {
     pwdLength = prompt("Choose the password length between 8 to 128");
   }
