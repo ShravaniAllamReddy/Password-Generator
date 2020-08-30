@@ -35,7 +35,7 @@ function generatePassword() {
   pwdLength = prompt("How many characters would you like your password to contain?");
 
   // The below loop executes until user enters a number between 8 and 128
-  
+
   while (isNaN(pwdLength) || pwdLength < 8 || pwdLength > 128) {
     pwdLength = prompt("Choose the password length between 8 to 128");
   }
@@ -46,7 +46,7 @@ function generatePassword() {
   let confirmSpecials = confirm("would you like to include special characters");
 
   //This below loop executes until user selects atleast one character type
-  
+
   while (confirmUppers === false && confirmLowers === false && confirmNumbers === false && confirmSpecials === false) {
     alert("Select atleast one character type");
     confirmUppers = confirm("would you like to include uppercase");
