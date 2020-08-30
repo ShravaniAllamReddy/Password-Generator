@@ -23,11 +23,10 @@ function writePassword() {
 }
 
 /**
- * generate a password based on certain criteria
+ * This function generates a password based on certain criteria
  */
 function generatePassword() {
 
-  // Password is currently blank! We need to make a better one
   let password = "";
   let userChoices = "";
   let pwdLength = 0;
