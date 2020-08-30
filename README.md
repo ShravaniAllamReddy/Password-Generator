@@ -26,7 +26,7 @@ The isNaN() function determines whether a value is NaN or not.
 
 NaN - Not a Number
 
-2.  Math.random() Function : (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+2.Math.random() Function : (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
 
 Math.random() does not provide cryptographically secure random numbers. 
 Do not use them for anything related to security. 
